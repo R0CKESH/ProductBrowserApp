@@ -40,5 +40,8 @@ object TestData {
         limit = 1
     )
 
-    val mockCategoriesResponse = listOf("beauty", "fragrances")
+    val mockCategoriesResponse: List<CategoryModel> = listOf(
+        CategoryModel(slug = "beauty", name = "Beauty", url = "url-1"),
+        CategoryModel(slug = "fragrances", name = "Fragrances", url = "url-2")
+    )
 }

@@ -24,7 +24,8 @@ class GetCategoriesUseCaseTest {
         // Assert
         assertTrue(result.isSuccess)
         assertEquals(2, result.getOrNull()?.size)
-        assertEquals("beauty", result.getOrNull()?.first())
+        assertEquals("beauty", result.getOrNull()?.first()?.slug)
+        assertEquals("Beauty", result.getOrNull()?.first()?.name)
     }
 
     @Test

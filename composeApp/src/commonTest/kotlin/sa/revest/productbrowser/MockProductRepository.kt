@@ -1,13 +1,14 @@
 package sa.revest.productbrowser
 
 
+import sa.revest.productbrowser.data.model.CategoryModel
 import sa.revest.productbrowser.data.model.ProductListResponse
 import sa.revest.productbrowser.data.repository.ProductRepository
 
 class MockProductRepository(
     private val productsResult: Result<ProductListResponse>? = null,
     private val searchResult: Result<ProductListResponse>? = null,
-    private val categoriesResult: Result<List<String>>? = null,
+    private val categoriesResult: Result<List<CategoryModel>>? = null,
     private val byCategoryResult: Result<ProductListResponse>? = null
 ) : ProductRepository {
 
@@ -19,7 +20,7 @@ class MockProductRepository(
         return searchResult ?: error("searchProducts() result not set in mock")
     }
 
-    override suspend fun getCategories(): Result<List<String>> {
+    override suspend fun getCategories(): Result<List<CategoryModel>> {
         return categoriesResult ?: error("getCategories() result not set in mock")
     }
 
