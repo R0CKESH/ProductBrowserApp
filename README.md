@@ -116,8 +116,6 @@ Open `iosApp/iosApp.xcworkspace` in Xcode after first sync.
 
 <h2>📱 App Demo (9:16 Vertical Video)</h2>
 
-<p align="center">
-  <video src="screenshots/Screen_recording_20251117_170424.mp4" width="300" controls>
-  </video>
-</p>
+[▶️ Watch the demo](https://github.com/R0CKESH/ProductBrowserApp/raw/master/screenshots/Screen_recording_20251117_170424.mp4)
+
 
