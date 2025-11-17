@@ -111,3 +111,13 @@ Image Loading: I used Kamel, a popular KMP-native library for loading images, to
 Loading State: Instead of a simple CircularProgressIndicator, I implemented a Shimmer animation for a more polished, professional loading experience.
 
 Error Handling: Basic error handling is implemented. A message is shown on the UI if a network call fails. A more robust solution would involve dedicated error components.
+
+
+
+<div style="display: flex; justify-content: center;">
+  <video src="screenshots/Screen_recording_20251117_170424.mp4" 
+         style="width: 100%; max-width: 360px; aspect-ratio: 9/16;" 
+         controls 
+         playsinline>
+  </video>
+</div>
