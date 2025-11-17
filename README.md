@@ -114,12 +114,10 @@ Open `iosApp/iosApp.xcworkspace` in Xcode after first sync.
 
 ---
 
-## 📱 App Demo (9:16 Vertical Video)
+<h2>📱 App Demo (9:16 Vertical Video)</h2>
 
-Below is the 9:16 screen recording embedded using GitHub-compatible HTML:
-
-```html
 <p align="center">
   <video src="screenshots/Screen_recording_20251117_170424.mp4" width="300" controls>
   </video>
 </p>
+
