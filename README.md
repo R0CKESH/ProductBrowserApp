@@ -118,7 +118,7 @@ Open `iosApp/iosApp.xcworkspace` in Xcode after first sync.
 
 
 <p align="center">
-  <img src="screenshots/demo.gif" width="400"  alt="demo"/>
+  <img src="https://github.com/R0CKESH/ProductBrowserApp/blob/master/screenshots/demo.gif" width="400"  alt="demo"/>
 </p>
 
 
