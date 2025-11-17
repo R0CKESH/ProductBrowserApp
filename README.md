@@ -94,7 +94,7 @@ Enhances testability and modularity.
 
 ### **🍏 iOS**
 1. Install Xcode
-2. Open the project in Android Studio
+2. Open the project in Xcode
 3. Choose **iosSimulatorArm64** target
 4. Run the app
 
