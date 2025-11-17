@@ -1,123 +1,125 @@
-Product Browser App (Kotlin Multiplatform)
+# Product Browser App (Kotlin Multiplatform)
 
 This is a Kotlin Multiplatform Mobile (KMM) application built for the Revest Solutions technical assignment.
 
 The application is a product catalog browser built using Kotlin Compose Multiplatform, targeting both Android and iOS from a single, shared codebase. It features a rich, category-based UI, search, filtering, and a modern, scalable architecture.
 
-📋 Summary of Business Requirements
+---
+
+## 📋 Summary of Business Requirements
 
 The app serves as a prototype for a mobile product catalog, allowing users to:
 
-View Products: Display a list of all products, grouped by category, showing the product name, price, and thumbnail.
+### ✔ View Products
+Display a list of all products, grouped by category, showing the product name, price, and thumbnail.
 
-View Product Details: Tap a product to view detailed information, including its title, full description, brand, price, and rating.
+### ✔ View Product Details
+Tap a product to view detailed information, including its title, full description, brand, price, and rating.
 
-Search Products: Search for products by keyword using an API-based search.
+### ✔ Search Products
+Search for products by keyword using an API-based search.
 
-Filter Products:  Filter the product list by selecting a specific category.
+### ✔ Filter Products
+Filter the product list by selecting a specific category.
 
-🏛️ Project Architecture Overview
+---
 
-The project follows Clean Architecture principles, strictly separating concerns into different layers within the composeApp/commonMain module.
+## 🏛️ Project Architecture Overview
 
-Core Principles
+The project follows Clean Architecture principles, strictly separating concerns into different layers within the `composeApp/commonMain` module.
 
-Kotlin Multiplatform (KMP): All code (UI, business logic, data, and presentation) is written in Kotlin and shared 100% between Android and iOS.
+---
 
-Compose Multiplatform: The entire UI is built with Compose Multiplatform, providing a single, shared, and declarative UI layer for both platforms.
+## 🔑 Core Principles
 
-Layers
+### **Kotlin Multiplatform (KMP)**
+All code (UI, business logic, data, and presentation) is written in Kotlin and shared 100% between Android and iOS.
 
-Data Layer (data package)
+### **Compose Multiplatform**
+The entire UI is built with Compose Multiplatform, providing a single, shared, declarative UI layer for both platforms.
 
-Repository Pattern: A ProductRepository interface abstracts the data source.
+---
 
-Ktor Client: Used for all networking to consume the dummyjson.com API.
+## 📂 Layers Overview
 
-kotlinx.serialization: Used for parsing all JSON responses into Kotlin data models.
+### **Data Layer (`data` package)**
+- **Repository Pattern:** ProductRepository interface abstracts the data source.
+- **Ktor Client:** For networking with dummyjson.com API.
+- **kotlinx.serialization:** For JSON parsing.
 
-Domain Layer (domain package)
+### **Domain Layer (`domain` package)**
+- **Use Cases:** All business logic (e.g., `GetProductsUseCase`, `SearchProductsUseCase`).
+- Ensures clear separation between logic and UI.
 
-Use Cases: Contains all business logic, encapsulated in simple UseCase classes (e.g., GetProductsUseCase, SearchProductsUseCase). This isolates what the app does from how it's done.
+### **Presentation Layer (`presentation` package)**
+- **Decompose:** Navigation + lifecycle-aware components.
+- **RootComponent:** Manages navigation stack.
+- **ProductListComponent:** Manages home screen state.
 
-Presentation Layer (presentation package)
+### **Koin (Dependency Injection)**
+Used to provide repositories, use cases, and components.  
+Enhances testability and modularity.
 
-Decompose: Used for navigation and as a modern, lifecycle-aware alternative to ViewModels. RootComponent manages the navigation stack, while ProductListComponent manages the state for the main screen.
+---
 
-Koin: Used for Dependency Injection to manage and provide dependencies (like repositories and use cases) to the presentation layer, making the app modular and easy to test.
+## 📚 Key Libraries Used
 
-Key Libraries
+- **Compose Multiplatform** – Shared UI
+- **Ktor** – Networking
+- **kotlinx.serialization** – JSON
+- **Decompose** – Navigation & State
+- **Koin** – Dependency Injection
+- **Kamel** – Image loading
+- **Compose Shimmer** – Loading animation
 
-Compose Multiplatform: Shared Declarative UI.
+---
 
-Ktor: Networking Client.
+## 🛠️ How to Build & Run
 
-kotlinx.serialization: JSON Parsing.
+### **Prerequisites**
+- Android Studio (latest: Koala / Iguana)
+- Kotlin Multiplatform Mobile Plugin
+- Xcode (for iOS)
 
-Decompose: Navigation & State Management.
+---
 
-Koin: Dependency Injection.
+### **▶ Android**
+1. Open project in Android Studio
+2. Let Gradle sync
+3. Select **composeApp** run configuration
+4. Choose emulator or physical device
+5. Run the app
 
-Kamel: Asynchronous image loading for Compose Multiplatform.
+---
 
-Compose Shimmer: Provides a professional loading animation.
+### **🍏 iOS**
+1. Install Xcode
+2. Open the project in Android Studio
+3. Choose **iosSimulatorArm64** target
+4. Run the app
 
-🛠️ How to Build and Run
+_Alternative:_  
+Open `iosApp/iosApp.xcworkspace` in Xcode after first sync.
 
-Prerequisites
+---
 
-Android Studio (latest version, e.g., Koala or Iguana)
+## 💡 Trade-offs & Assumptions
 
-Kotlin Multiplatform Mobile Plugin (in Android Studio)
+- **Dependency Injection:** Chose Koin for scalability though assignment allowed manual DI.
+- **State Management:** Decompose for lifecycle safety and navigation.
+- **UI Improvements:** Added category grouping for richer UX.
+- **Image Loading:** Used Kamel for pure KMP support.
+- **Loading UX:** Shimmer used instead of simple loaders.
+- **Error Handling:** Basic network error UI in place.
 
-Xcode (for running the iOS app on a Mac)
+---
 
-Android
+## 📱 App Demo (9:16 Vertical Video)
 
-Open the project in Android Studio.
+Below is the 9:16 screen recording embedded using GitHub-compatible HTML:
 
-Let Gradle sync and download all dependencies.
-
-Select the composeApp configuration from the "Run" dropdown.
-
-Choose an Android emulator or a connected physical device.
-
-Click the "Run" (▶) button.
-
-iOS
-
-Ensure you have Xcode installed and configured.
-
-Open the project in Android Studio.
-
-Select the composeApp configuration from the "Run" dropdown.
-
-Choose an iOS Simulator (e.g., iosSimulatorArm64).
-
-Click the "Run" (▶) button.
-
-(Alternatively, you can open the iosApp/iosApp.xcworkspace file in Xcode and run the project from there after the initial Gradle sync in Android Studio.)
-
-💡 Trade-offs and Assumptions
-
-Dependency Injection: The prompt stated DI was optional (manual was acceptable). I chose to fully integrate Koin as it's a best practice for a scalable and testable KMP application.
-
-State Management: Decompose was chosen over a manual solution as it's the recommended library for state management and navigation in Compose Multiplatform, providing lifecycle-aware components.
-
-UI Design: The initial requirement was a simple list. I refactored this into a more modern, "rich" UI that groups products by category on the main screen. This provides a better user experience and demonstrates handling more complex data structures. Search and filter results are displayed in a dedicated flat list for clarity.
-
-Image Loading: I used Kamel, a popular KMP-native library for loading images, to avoid platform-specific implementations.
-
-Loading State: Instead of a simple CircularProgressIndicator, I implemented a Shimmer animation for a more polished, professional loading experience.
-
-Error Handling: Basic error handling is implemented. A message is shown on the UI if a network call fails. A more robust solution would involve dedicated error components.
-
-
-
-<div style="display: flex; justify-content: center;">
-  <video src="screenshots/Screen_recording_20251117_170424.mp4" 
-         style="width: 100%; max-width: 360px; aspect-ratio: 9/16;" 
-         controls 
-         playsinline>
+```html
+<p align="center">
+  <video src="screenshots/Screen_recording_20251117_170424.mp4" width="300" controls>
   </video>
-</div>
+</p>
