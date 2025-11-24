@@ -1,6 +1,6 @@
 # Product Browser App (Kotlin Multiplatform)
 
-This is a Kotlin Multiplatform Mobile (KMM) application built for the Revest Solutions technical assignment.
+This is a Kotlin Multiplatform Mobile (KMM) sample application.
 
 The application is a product catalog browser built using Kotlin Compose Multiplatform, targeting both Android and iOS from a single, shared codebase. It features a rich, category-based UI, search, filtering, and a modern, scalable architecture.
 
@@ -84,19 +84,19 @@ Enhances testability and modularity.
 ---
 
 ### **▶ Android**
-1. Open project in Android Studio
-2. Let Gradle sync
-3. Select **composeApp** run configuration
-4. Choose emulator or physical device
-5. Run the app
+1. Open project in Android Studio  
+2. Let Gradle sync  
+3. Select **composeApp** run configuration  
+4. Choose emulator or physical device  
+5. Run the app  
 
 ---
 
 ### **🍏 iOS**
-1. Install Xcode
-2. Open the project in Xcode
-3. Choose **iosSimulatorArm64** target
-4. Run the app
+1. Install Xcode  
+2. Open the project in Xcode  
+3. Choose **iosSimulatorArm64** target  
+4. Run the app  
 
 _Alternative:_  
 Open `iosApp/iosApp.xcworkspace` in Xcode after first sync.
@@ -105,7 +105,7 @@ Open `iosApp/iosApp.xcworkspace` in Xcode after first sync.
 
 ## 💡 Trade-offs & Assumptions
 
-- **Dependency Injection:** Chose Koin for scalability though assignment allowed manual DI.
+- **Dependency Injection:** Chose Koin for scalability, though manual DI would also work for smaller apps.
 - **State Management:** Decompose for lifecycle safety and navigation.
 - **UI Improvements:** Added category grouping for richer UX.
 - **Image Loading:** Used Kamel for pure KMP support.
@@ -116,14 +116,6 @@ Open `iosApp/iosApp.xcworkspace` in Xcode after first sync.
 
 <h2>📱 App Demo (9:16 Vertical Video)</h2>
 
-
 <p align="center">
   <img src="https://github.com/R0CKESH/ProductBrowserApp/blob/master/screenshots/demo.gif" width="400"  alt="demo"/>
 </p>
-
-
-
-
-
-
-
