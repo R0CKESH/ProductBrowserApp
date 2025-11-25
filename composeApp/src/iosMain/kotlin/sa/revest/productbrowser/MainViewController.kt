@@ -11,14 +11,22 @@ import sa.revest.productbrowser.di.initKoin
 
 @OptIn(ExperimentalDecomposeApi::class)
 @Suppress("unused")
-fun mainViewController(): UIViewController {
-
+fun MainViewController(): UIViewController {
+// 1. Initialize Koin (Dependency Injection)
     initKoin()
+
+    // 2. Create the LifecycleRegistry for the component
     val lifecycle = LifecycleRegistry()
 
+    // 3. Create the Root Component manually
+    // We don't need 'retainedComponent' here because the UIViewController
+    // itself retains this instance in memory.
     val root = DefaultRootComponent(
         componentContext = DefaultComponentContext(lifecycle = lifecycle)
     )
 
-    return ComposeUIViewController { App(root = root) }
+    // 4. Return the Compose UI
+    return ComposeUIViewController {
+        App(root = root)
+    }
 }

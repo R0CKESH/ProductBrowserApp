@@ -65,7 +65,7 @@ kotlin {
             implementation(libs.kotlinx.serialization.json)
 
             // Decompose
-            implementation(libs.decompose)
+            api(libs.decompose)
             implementation(libs.decompose.extensions.compose)
 
             // Kamel Image
@@ -114,8 +114,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
 

@@ -30,7 +30,7 @@ import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -241,19 +241,19 @@ private fun ProductDetailsSection(product: Product) {
                 label = "Brand",
                 value = product.brand ?: "N/A"
             )
-            Divider(modifier = Modifier.padding(vertical = 12.dp))
+            HorizontalDivider(modifier = Modifier.padding(vertical = 12.dp))
             InfoRow(
                 icon = Icons.Default.Inventory2,
                 label = "Stock",
                 value = "${product.stock} units"
             )
-            Divider(modifier = Modifier.padding(vertical = 12.dp))
+            HorizontalDivider(modifier = Modifier.padding(vertical = 12.dp))
             InfoRow(
                 icon = Icons.Default.LocalShipping,
                 label = "Shipping",
                 value = product.shippingInformation
             )
-            Divider(modifier = Modifier.padding(vertical = 12.dp))
+            HorizontalDivider(modifier = Modifier.padding(vertical = 12.dp))
             InfoRow(
                 icon = Icons.Default.Security,
                 label = "Warranty",
